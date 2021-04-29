@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Радуга ЛОЛ</title>
+    <style>
+        body{
+            width: calc(100vw - 16px);
+            height: calc(100vh - 16px);
+            display: flex;
+        }
+        #cnv {
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cnv" width="700" height="700" ></canvas>
+    <script>
+        var canvas = document.getElementById("cnv");
+        var ct = canvas.getContext("2d");
+        w=canvas.width
+        h=canvas.height
+        ct.beginPath();
+        ct.strokeStyle = "white";
+        ct.lineWidth=240;
+        ct.arc(w/2,w/2,w/3,0,2*Math.PI)
+        ct.stroke();
+        
+        var angl=0
+        var si=setInterval("crcl()",10)
+        function crcl(){
+            angl+=0.01
+            ct.beginPath()
+            ct.strokeStyle = "red";
+            ct.lineWidth=220;
+            ct.arc(w/2,w/2,w/3,0,angl)
+            ct.stroke();
+            ct.closePath()
+            ct.beginPath();
+            ct.lineWidth=180;
+            ct.strokeStyle = "orange";
+            ct.arc(w/2,w/2,w/3.4,0,angl)
+            ct.stroke();
+            ct.closePath()
+            ct.beginPath();
+            ct.lineWidth=140;
+            ct.strokeStyle = "yellow";
+            ct.arc(w/2,w/2,w/3.8,0,angl)
+            ct.stroke();
+            ct.closePath()
+            ct.beginPath();
+            ct.lineWidth=100;
+            ct.strokeStyle = "green";
+            ct.arc(w/2,w/2,w/4.3,0,angl)
+            ct.stroke();
+            ct.closePath()
+            ct.beginPath();
+            ct.lineWidth=70;
+            ct.strokeStyle = "lightBlue";
+            ct.arc(w/2,w/2,w/4.9,0,angl)
+            ct.stroke();
+            ct.closePath()
+            ct.beginPath();
+            ct.lineWidth=40;
+            ct.strokeStyle = "Blue";
+            ct.arc(w/2,w/2,w/5.7,0,angl)
+            ct.stroke();
+            ct.closePath()
+            ct.beginPath();
+            ct.lineWidth=30;
+            ct.strokeStyle = "violet";
+            ct.arc(w/2,w/2,w/7.5,0,angl)
+            ct.stroke();
+            ct.closePath()
+            if (angl>2*Math.PI) clearInterval(si), alert("ПРОСТО НАПОМИНАЮ ЧТО Я СМОГ <3 (Лошок)")
+        }
+    </script>
+</body>
+</html>
